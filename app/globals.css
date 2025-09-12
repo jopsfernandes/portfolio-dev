@@ -22,7 +22,7 @@
   --destructive-foreground: oklch(1 0 0); /* #ffffff - Texto em botões destrutivos */
   --border: oklch(0.92 0 0); /* #e5e7eb - Bordas padrão */
   --input: oklch(0.98 0 0); /* #f9fafb - Fundo de campos */
-  --ring: oklch(0.55 0.22 25 / 0.5); /* rgba(220, 38, 38, 0.5) - Foco */
+  --ring: oklch(75.009% 0.18738 146.057); /* rgba(220, 38, 38, 0.5) - Foco */
   --chart-1: oklch(0.55 0.22 25); /* #dc2626 */
   --chart-2: oklch(0.75 0.15 85); /* #f59e0b */
   --chart-3: oklch(0.28 0 0); /* #374151 */

@@ -8,8 +8,8 @@ export function Projects() {
     {
       title: "StudyButler",
       description:
-        "Plataforma educacional onde consegue ajudar qualquer tipo de aluno, independente da área acadêmica.",
-      image: "/modern-ecommerce-interface.png",
+        "Plataforma educacional onde consegue ajudar qualquer tipo de estudante, independente da área acadêmica.",
+      image: "/studybutler.png",
       technologies: ["React", "Vite", "PostgreSQL", "Stripe", "Electron", "ShadcnUI", "Langchain"],
       github: "https://github.com/jopsfernandes/study-butler-dftv",
       demo: "#",

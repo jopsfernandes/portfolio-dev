@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import {Link} from "next/link"
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
 
 export function Hero() {
@@ -57,7 +56,7 @@ export function Hero() {
             </a>
 
             
-          <a href="mailto:joaopfernandessantos@gmail.com?subject=Contato%20via%20Portfólio" className="cursor-pointer" target="_blank" rel="noopener noreferrer">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joaopfernandessantos@gmail.com&su=Contato%20via%20Portfólio" target="_blank" className="cursor-pointer">
             <Button variant="ghost" size="icon" className="h-12 w-12">
               <Mail className="h-6 w-6" />
             </Button>

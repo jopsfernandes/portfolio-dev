@@ -45,7 +45,7 @@ export function About() {
             </div>
 
             <div>
-              <img src="/developer-working-on-computer-setup.jpg" alt="Desenvolvedor trabalhando" className="rounded-lg shadow-lg" />
+              <img src="./developer-working-on-computer-setup.jpg" alt="Desenvolvedor trabalhando" className="rounded-lg shadow-lg" />
             </div>
           </div>
 

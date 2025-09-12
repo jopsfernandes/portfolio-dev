@@ -11,9 +11,9 @@ export function Footer() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             {/* Logo e Descrição */}
             <div className="space-y-4">
-              <div className="text-2xl font-bold text-primary">{"<Dev />"}</div>
+              <div className="text-2xl font-bold text-primary">{"<Jops />"}</div>
               <p className="text-muted-foreground leading-relaxed">
-                Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e experiências digitais excepcionais.
+                Fazendo o futuro com tecnologia.
               </p>
             </div>
 
@@ -34,15 +34,20 @@ export function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Conecte-se</h4>
               <div className="flex space-x-4">
-                <Button variant="ghost" size="icon">
+                <a href="">
+                 <Button variant="ghost" size="icon">
                   <Github className="h-5 w-5" />
                 </Button>
-                <Button variant="ghost" size="icon">
+                </a>
+               
+                <a href=""> <Button variant="ghost" size="icon">
                   <Linkedin className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon">
+                </Button></a>
+               
+                <a href=""><Button variant="ghost" size="icon">
                   <Mail className="h-5 w-5" />
-                </Button>
+                </Button></a>
+                 v
               </div>
               <p className="text-sm text-muted-foreground">
                 Sempre aberto para novas oportunidades e colaborações interessantes.

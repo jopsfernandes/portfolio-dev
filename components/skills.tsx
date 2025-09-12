@@ -9,7 +9,7 @@ export function Skills() {
         { name: "React/Next.js", level: 95 },
         { name: "TypeScript", level: 90 },
         { name: "Tailwind CSS", level: 88 },
-        { name: "Vue.js", level: 75 },
+        { name: "React Nati", level: 75 },
       ],
     },
     {
