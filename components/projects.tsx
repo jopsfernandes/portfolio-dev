@@ -9,7 +9,7 @@ export function Projects() {
       title: "StudyButler",
       description:
         "Plataforma educacional onde consegue ajudar qualquer tipo de estudante, independente da área acadêmica.",
-      image: "/studybutler.png",
+      image: "./studybutler.png",
       technologies: ["React", "Vite", "PostgreSQL", "Stripe", "Electron", "ShadcnUI", "Langchain"],
       github: "https://github.com/jopsfernandes/study-butler-dftv",
       demo: "#",
@@ -17,7 +17,7 @@ export function Projects() {
     {
       title: "Restaurant Manager",
       description: "Sistema para gerenciar comandas físicas em restaurantes, facilitando o controle de pedidos e pagamentos.",
-      image: "/task-management-dashboard.png",
+      image: "./task-management-dashboard.png",
       technologies: ["Electron", "TypeScript", "Prisma", "IPC", "ShadcnUI","SWC"],
       github: "#",
       demo: "#",
