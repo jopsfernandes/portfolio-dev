@@ -11,14 +11,14 @@ export function Projects() {
         "Plataforma educacional onde consegue ajudar qualquer tipo de aluno, independente da área acadêmica.",
       image: "/modern-ecommerce-interface.png",
       technologies: ["React", "Vite", "PostgreSQL", "Stripe", "Electron", "ShadcnUI", "Langchain"],
-      github: "#",
+      github: "https://github.com/jopsfernandes/study-butler-dftv",
       demo: "#",
     },
     {
-      title: "Task Management App",
-      description: "Aplicativo de gerenciamento de tarefas com colaboração em tempo real e notificações push.",
+      title: "Restaurant Manager",
+      description: "Sistema para gerenciar comandas físicas em restaurantes, facilitando o controle de pedidos e pagamentos.",
       image: "/task-management-dashboard.png",
-      technologies: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+      technologies: ["Electron", "TypeScript", "Prisma", "IPC", "ShadcnUI","SWC"],
       github: "#",
       demo: "#",
     },
@@ -63,10 +63,13 @@ export function Projects() {
                   </div>
 
                   <div className="flex gap-2 pt-2">
+                    
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Button size="sm" variant="outline" className="flex-1 bg-transparent">
                       <Github className="h-4 w-4 mr-2" />
                       Código
                     </Button>
+                    </a>
                     <Button size="sm" className="flex-1">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Demo
