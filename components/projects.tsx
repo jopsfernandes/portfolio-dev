@@ -19,7 +19,7 @@ export function Projects() {
       description: "Sistema para gerenciar comandas físicas em restaurantes, facilitando o controle de pedidos e pagamentos.",
       image: "./task-management-dashboard.png",
       technologies: ["Electron", "TypeScript", "Prisma", "IPC", "ShadcnUI","SWC"],
-      github: "#",
+      github: "https://github.com/jopsfernandes/electron-receipt-printer",
       demo: "#",
     },
     
