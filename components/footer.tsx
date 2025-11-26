@@ -35,19 +35,19 @@ export function Footer() {
               <h4 className="text-lg font-semibold">Conecte-se</h4>
               <div className="flex space-x-4">
                 <a href="">
-                 <Button variant="ghost" size="icon">
+                 <Button variant="ghost" size="icon" className="cursor-pointer">
                   <Github className="h-5 w-5" />
                 </Button>
                 </a>
                
-                <a href=""> <Button variant="ghost" size="icon">
+                <a href=""> <Button variant="ghost" size="icon" className="cursor-pointer">
                   <Linkedin className="h-5 w-5" />
                 </Button></a>
                
-                <a href=""><Button variant="ghost" size="icon">
+                <a href=""><Button variant="ghost" size="icon" className="cursor-pointer">
                   <Mail className="h-5 w-5" />
                 </Button></a>
-                 v
+                 
               </div>
               <p className="text-sm text-muted-foreground">
                 Sempre aberto para novas oportunidades e colaborações interessantes.

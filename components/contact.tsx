@@ -56,7 +56,7 @@ export function Contact() {
                     </div>
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">joaopfernandessantos@gmail.com</p>
+                      <p className="text-muted-foreground">contato@devfernandes.com</p>
                     </div>
                   </div>
 

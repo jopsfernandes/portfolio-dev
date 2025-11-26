@@ -25,32 +25,32 @@ export function Header() {
           <nav className="hidden md:flex space-x-8">
             <button
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Sobre
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Projetos
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Habilidades
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Contato
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button variant="ghost" size="icon" className="md:hidden cursor-" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </Button>
         </div>

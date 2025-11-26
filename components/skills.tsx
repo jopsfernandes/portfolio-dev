@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import LogoLoop from "./LogoLoop"
+
 
 export function Skills() {
   const skillCategories = [
@@ -9,7 +11,7 @@ export function Skills() {
         { name: "React/Next.js", level: 95 },
         { name: "TypeScript", level: 90 },
         { name: "Tailwind CSS", level: 88 },
-        { name: "React Nati", level: 75 },
+        { name: "React Native", level: 75 },
       ],
     },
     {
@@ -79,16 +81,7 @@ export function Skills() {
               <CardTitle className="text-2xl text-center">Ferramentas & Plataformas</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-wrap justify-center gap-4">
-                {tools.map((tool, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium hover:bg-primary/20 transition-colors"
-                  >
-                    {tool}
-                  </div>
-                ))}
-              </div>
+              
             </CardContent>
           </Card>
         </div>

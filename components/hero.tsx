@@ -42,22 +42,22 @@ export function Hero() {
 
           <div className="flex justify-center space-x-6 mb-12">
             <a href="https://github.com/jopsfernandes" className="cursor-pointer" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="h-12 w-12">
+              <Button variant="ghost" size="icon" className="h-12 w-12 cursor-pointer">
               <Github className="h-6 w-6" />
               </Button>
             </a>
             
 
             <a href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fernandes-4959b419a/" className="cursor-pointer" target="_blank" rel="noopener noreferrer">
-              <Button variant="ghost" size="icon" className="h-12 w-12">
+              <Button variant="ghost" size="icon" className="h-12 w-12 cursor-pointer">
               <Linkedin className="h-6 w-6" />
             </Button>
 
             </a>
 
             
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=joaopfernandessantos@gmail.com&su=Contato%20via%20Portfólio" target="_blank" className="cursor-pointer">
-            <Button variant="ghost" size="icon" className="h-12 w-12">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato@devfernandes.com&su=Contato%20via%20Portfólio" target="_blank" className="cursor-pointer">
+            <Button variant="ghost" size="icon" className="h-12 w-12 cursor-pointer">
               <Mail className="h-6 w-6" />
             </Button>
           </a>
