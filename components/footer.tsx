@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Github, Linkedin, Mail, Heart, CoffeeIcon, Coffee, LucideCoffee } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+
+   const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+    
+  }
 
   return (
     <footer className="bg-muted/50 border-t border-border">
@@ -21,12 +29,12 @@ export function Footer() {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold">Links Rápidos</h4>
               <div className="space-y-2">
-                <button className="block text-muted-foreground hover:text-primary transition-colors">Sobre</button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">Projetos</button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">
+                <button className="block text-muted-foreground hover:text-primary transition-colors"  onClick={() => scrollToSection("about")}>Sobre</button>
+                <button className="block text-muted-foreground hover:text-primary transition-colors"  onClick={() => scrollToSection("projects")}>Projetos</button>
+                <button className="block text-muted-foreground hover:text-primary transition-colors"  onClick={() => scrollToSection("skills")}>
                   Habilidades
                 </button>
-                <button className="block text-muted-foreground hover:text-primary transition-colors">Contato</button>
+                <button className="block text-muted-foreground hover:text-primary transition-colors"  onClick={() => scrollToSection("contact")}>Contato</button>
               </div>
             </div>
 
@@ -60,7 +68,7 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
               <p className="text-sm text-muted-foreground">© {currentYear} João Pedro Fernandes. Todos os direitos reservados.</p>
               <p className="text-sm text-muted-foreground flex items-center">
-                Feito com <Heart className="h-4 w-4 mx-1 text-primary" /> usando Next.js
+                Feito com <Heart className="h-4 w-4 mx-1 text-primary" /> & ☕
               </p>
             </div>
           </div>

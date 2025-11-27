@@ -1,7 +1,7 @@
 "use client"
-
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react"
+import LightRays from "@/components/LightRays"
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -12,22 +12,31 @@ export function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20">
-      <div className="container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <img
-              src="./professional-developer-portrait.png"
-              alt="Foto do desenvolvedor"
-              className="w-48 h-48 rounded-full mx-auto mb-8 border-4 border-primary/20"
-            />
-          </div>
+    <section id="hero" className="relative overflow-hidden min-h-screen">
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
+      <LightRays
+    raysOrigin="top-center"
+    raysColor="#ffffff"
+    raysSpeed={0.2}
+    lightSpread={0.8}
+    rayLength={0.7}
+    followMouse={false}
+    mouseInfluence={0.1}
+    noiseAmount={0.1}
+    distortion={0.0}
+    className="custom-rays absolute inset-0 z-0 pointer-events-none"
+    />
+    <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
+      <div className="max-w-4xl w-full text-center bg-transparent">
+        <div className="max-w-4xl mx-auto mb-8 bg-transparent">
+          
+         
+
+          <h1 className="text-5xl md:text-7xl font-bold bg-transparent mb-6 text-balance">
             Olá, meu nome é <span className="text-primary">João Fernandes</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 text-balance">
+          <p className="text-xl md:text-2xl text-muted-foreground bg-transparent mb-8 text-balance">
             Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e experiências digitais excepcionais
           </p>
 
@@ -70,6 +79,7 @@ export function Hero() {
           </Button>
         </div>
       </div>
+    </div>
     </section>
   )
 }

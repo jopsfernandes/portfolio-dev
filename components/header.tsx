@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react"
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const scrollToSection = (sectionId: string) => {
+   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -16,8 +16,8 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 w-full bg-transparent   border-border z-150">
+      <div className="container mx-auto px-4 pt-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-primary">{"<Jops/>"}</div>
 
@@ -29,18 +29,20 @@ export function Header() {
             >
               Sobre
             </button>
+
+             <button
+              onClick={() => scrollToSection("skills")}
+              className="text-foreground hover:text-primary transition-colors cursor-pointer"
+            >
+              Habilidades
+            </button>
             <button
               onClick={() => scrollToSection("projects")}
               className="text-foreground hover:text-primary transition-colors cursor-pointer"
             >
               Projetos
             </button>
-            <button
-              onClick={() => scrollToSection("skills")}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer"
-            >
-              Habilidades
-            </button>
+           
             <button
               onClick={() => scrollToSection("contact")}
               className="text-foreground hover:text-primary transition-colors cursor-pointer"
@@ -50,7 +52,7 @@ export function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden cursor-" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button variant="ghost" size="icon" className="md:hidden " onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </Button>
         </div>
