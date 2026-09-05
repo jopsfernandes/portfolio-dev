@@ -1,7 +1,7 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { Badge } from "@/components/ui/badge"
 import LogoLoop from "./LogoLoop"
 import { SiReact,
     SiNextdotjs,
@@ -35,28 +35,28 @@ export function Skills() {
     {
       title: "Frontend",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 88 },
-        { name: "React Native", level: 75 },
+        { name: "React/Next.js" },
+        { name: "TypeScript" },
+        { name: "Tailwind CSS" },
+        { name: "React Native" },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 92 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 88 },
-        { name: "MongoDB", level: 80 },
+        { name: "Node.js" },
+        { name: "Python" },
+        { name: "PostgreSQL" },
+        { name: "MongoDB" },
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
-        { name: "Docker", level: 85 },
-        { name: "AWS", level: 78 },
-        { name: "Git", level: 95 },
-        { name: "CI/CD", level: 82 },
+        { name: "Docker" },
+        { name: "AWS" },
+        { name: "Git" },
+        { name: "CI/CD" },
       ],
     },
   ]
@@ -100,15 +100,11 @@ export function Skills() {
                 <CardHeader>
                   <CardTitle className="text-2xl text-center text-primary">{category.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-8">
+                <CardContent className="flex flex-wrap justify-center gap-2">
                   {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="font-medium">{skill.name}</span>
-                        <span className="">{skill.level}%</span>
-                      </div>
-                      <Progress value={skill.level} className="h-2" />
-                    </div>
+                    <Badge key={skillIndex} variant="secondary" className="text-sm font-medium">
+                      {skill.name}
+                    </Badge>
                   ))}
                 </CardContent>
               </Card>

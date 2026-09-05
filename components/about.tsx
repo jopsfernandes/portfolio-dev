@@ -31,22 +31,15 @@ export function About() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-balance">Sobre Mim</h2>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Sou um desenvolvedor full stack com mais de 5 anos de experiência criando aplicações web modernas e
-                escaláveis. Tenho prazer em transformar o que antes era um problema em soluções funcionais.
-              </p>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Especializo-me em React, Node.js, TypeScript e tecnologias modernas do ecossistema JavaScript. Sempre
-                busco as melhores práticas e mantenho-me atualizado com as últimas tendências do desenvolvimento web.
-              </p>
-              
-            </div>
-
-            <div>
-              <img src="./developer-working-on-computer-setup.jpg" alt="Desenvolvedor trabalhando" className="rounded-lg shadow-lg" />
-            </div>
+          <div className="max-w-2xl mx-auto mb-16">
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Sou um desenvolvedor full stack com mais de 5 anos de experiência criando aplicações web modernas e
+              escaláveis. Tenho prazer em transformar o que antes era um problema em soluções funcionais.
+            </p>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Especializo-me em React, Node.js, TypeScript e tecnologias modernas do ecossistema JavaScript. Sempre
+              busco as melhores práticas e mantenho-me atualizado com as últimas tendências do desenvolvimento web.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

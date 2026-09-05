@@ -16,7 +16,7 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-transparent   border-border z-150">
+    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-150">
       <div className="container mx-auto px-4 pt-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-primary">{"<Jops/>"}</div>
