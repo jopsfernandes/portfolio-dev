@@ -6,11 +6,20 @@ import './globals.css'
 import { ThemeProvider } from 'next-themes'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://devfernandes.com'),
   title: 'João Fernandes - Dev Fullstack',
-  icons:{
+  description: 'Criado com Next.js e muito café',
+  icons: {
     icon: './professional-developer-portrait.png',
   },
-  description: 'Criado com Next.js e muito café',
+  openGraph: {
+    title: 'João Fernandes - Dev Fullstack',
+    description: 'Criado com Next.js e muito café',
+    url: 'https://devfernandes.com',
+    siteName: 'João Fernandes - Dev Fullstack',
+    locale: 'pt_BR',
+    type: 'website',
+  },
   generator: 'v0.app',
 }
 
@@ -22,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
           {children}
           </ThemeProvider>
         <Analytics />
