@@ -6,7 +6,7 @@ import './globals.css'
 import { ThemeProvider } from 'next-themes'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://devfernandes.com'),
+  metadataBase: new URL('https://www.devfernandes.com'),
   title: 'João Fernandes - Dev Fullstack',
   description: 'Criado com Next.js e muito café',
   icons: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'João Fernandes - Dev Fullstack',
     description: 'Criado com Next.js e muito café',
-    url: 'https://devfernandes.com',
+    url: 'https://www.devfernandes.com',
     siteName: 'João Fernandes - Dev Fullstack',
     locale: 'pt_BR',
     type: 'website',
