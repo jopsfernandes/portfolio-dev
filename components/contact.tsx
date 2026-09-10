@@ -76,7 +76,7 @@ export function Contact() {
                     </div>
                     <div>
                       <p className="font-medium">Localização</p>
-                      <p className="text-muted-foreground">Costa Rica, Mato Grosso do Sul</p>
+                      <p className="text-muted-foreground">Campo Grande, Mato Grosso do Sul</p>
                     </div>
                   </div>
                 </div>
