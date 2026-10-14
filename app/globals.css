@@ -1,84 +1,58 @@
-
 @import "tailwindcss";
 
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Mundo visual: cartaz concretista brasileiro.
+ * Papel frio, tinta azul-escura, campos inteiros de cobalto e amarelo-sinal.
+ */
 :root {
-  --background: oklch(1 0 0); /* #ffffff - Fundo principal */
-  --foreground: oklch(0.28 0 0); /* #374151 - Texto padrão */
-  --card: oklch(0.99 0.01 15); /* #fef2f2 - Fundo dos cartões */
-  --card-foreground: oklch(0.28 0 0); /* #374151 - Texto nos cartões */
-  --popover: oklch(1 0 0); /* #ffffff - Fundo de pop-ups */
-  --popover-foreground: oklch(0.28 0 0); /* #374151 - Texto em pop-ups */
-  --primary: oklch(69.204% 0.18893 145.539); /* #dc2626 - Botões de ação principal */
-  --primary-foreground: oklch(1 0 0); /* #ffffff - Texto em botões primários */
-  --secondary: oklch(67.603% 0.10668 202.951); /* #f59e0b - Botões secundários */
-  --secondary-foreground: oklch(1 0 0); /* #ffffff - Texto em botões secundários */
-  --muted: oklch(0.99 0.01 15); /* #fef2f2 - Fundo para seções menos importantes */
-  --muted-foreground: oklch(0.28 0 0); /* #374151 - Texto em seções menos importantes */
-  --accent: oklch(63.092% 0.10894 216.855); /* #f59e0b - Destaques e ícones */
-  --accent-foreground: oklch(1 0 0); /* #ffffff - Texto em destaques */
-  --destructive: oklch(0.55 0.22 25); /* #dc2626 - Botões destrutivos */
-  --destructive-foreground: oklch(1 0 0); /* #ffffff - Texto em botões destrutivos */
-  --border: oklch(0.92 0 0); /* #e5e7eb - Bordas padrão */
-  --input: oklch(0.98 0 0); /* #f9fafb - Fundo de campos */
-  --ring: oklch(75.009% 0.18738 146.057); /* rgba(220, 38, 38, 0.5) - Foco */
-  --chart-1: oklch(0.55 0.22 25); /* #dc2626 */
-  --chart-2: oklch(0.75 0.15 85); /* #f59e0b */
-  --chart-3: oklch(0.28 0 0); /* #374151 */
-  --chart-4: oklch(0.99 0.01 15); /* #fef2f2 */
-  --chart-5: oklch(0.92 0 0); /* #e5e7eb */
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  --paper: oklch(0.975 0.004 250);
+  --paper-deep: oklch(0.935 0.008 250);
+  --ink: oklch(0.2 0.03 265);
+  --ink-soft: oklch(0.4 0.03 265);
+  --cobalt: oklch(0.47 0.21 262);
+  --cobalt-deep: oklch(0.33 0.16 264);
+  --cobalt-tint: oklch(0.88 0.05 262);
+  --signal: oklch(0.86 0.17 92);
+  --signal-deep: oklch(0.78 0.16 85);
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.18 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.65 0.22 25);
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.85 0.15 85);
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.85 0.15 85);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.65 0.22 25);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.65 0.22 25 / 0.5);
-  --chart-1: oklch(0.65 0.22 25);
-  --chart-2: oklch(0.85 0.15 85);
-  --chart-3: oklch(0.985 0 0);
-  --chart-4: oklch(0.18 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--cobalt);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: var(--paper-deep);
+  --secondary-foreground: var(--ink);
+  --muted: var(--paper-deep);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--signal);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.2 0.03 265 / 0.16);
+  --input: oklch(0.2 0.03 265 / 0.3);
+  --ring: var(--cobalt);
+  --radius: 0rem;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-deep: var(--cobalt-deep);
+  --color-cobalt-tint: var(--cobalt-tint);
+  --color-signal: var(--signal);
+  --color-signal-deep: var(--signal-deep);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -98,30 +72,109 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: var(--radius);
+  --radius-md: var(--radius);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-xl: var(--radius);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+    scrollbar-color: var(--cobalt) var(--paper-deep);
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01";
+    caret-color: var(--cobalt);
   }
+  ::selection {
+    background: var(--signal);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 3px solid var(--signal);
+    outline-offset: 3px;
+  }
+  .on-paper :focus-visible,
+  .on-signal :focus-visible {
+    outline-color: var(--cobalt);
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  font-stretch: 125%;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.92;
+}
+
+@utility font-wide {
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  font-stretch: 112%;
+}
+
+/* Peças do cartaz: cada ladrilho gira até o lugar ao carregar e gira de novo ao toque. */
+.tile {
+  transform: rotate(var(--rot, 0deg));
+  transform-origin: center;
+  transform-box: fill-box;
+  transition: transform 0.7s var(--ease-out-expo);
+}
+
+/* Duotone das capturas de projeto: tinta sobre cobalto. */
+.duotone {
+  position: relative;
+  background: var(--cobalt);
+  isolation: isolate;
+}
+.duotone img {
+  filter: grayscale(1) contrast(1.15) brightness(1.05);
+  mix-blend-mode: multiply;
+  transition: filter 0.6s var(--ease-out-expo), mix-blend-mode 0s;
+}
+.duotone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--signal);
+  mix-blend-mode: lighten;
+  opacity: 0.18;
+  pointer-events: none;
+  transition: opacity 0.6s var(--ease-out-expo);
+}
+/* Capturas escuras invertem antes do multiply para não virarem um bloco preto. */
+.duotone-invert img {
+  filter: grayscale(1) invert(1) contrast(1.1) brightness(1.05);
+}
+.group:hover .duotone img,
+.group:focus-within .duotone img {
+  filter: none;
+  mix-blend-mode: normal;
+}
+.group:hover .duotone::after,
+.group:focus-within .duotone::after {
+  opacity: 0;
 }

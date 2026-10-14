@@ -1,7 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink } from "lucide-react"
+import { ArrowUpRight, Github } from "lucide-react"
 
 export function Projects() {
   const projects = [
@@ -18,6 +15,7 @@ export function Projects() {
       title: "Restaurant Manager",
       description: "Sistema para gerenciar comandas físicas em restaurantes, facilitando o controle de pedidos e pagamentos.",
       image: "./task-management-dashboard.png",
+      darkImage: true,
       technologies: ["Electron", "TypeScript", "Prisma", "IPC", "ShadcnUI","SWC"],
       github: "https://github.com/jopsfernandes/electron-receipt-printer",
       demo: "#",
@@ -26,60 +24,81 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-balance">Meus Projetos</h2>
-
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto text-balance">
+    <section id="projects" className="on-paper bg-paper py-24 md:py-36">
+      <div className="mx-auto max-w-7xl px-5 md:px-10">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <h2 className="font-display text-[clamp(2.75rem,7vw,5rem)] text-ink lg:col-span-5">
+            Meus
+            <br />
+            Projetos
+          </h2>
+          <p className="max-w-[48ch] self-end text-xl leading-snug text-ink-soft lg:col-span-7">
             Aqui estão alguns dos projetos que desenvolvi, demonstrando minhas habilidades em diferentes tecnologias e
             domínios de aplicação.
           </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        <ol className="mt-20 space-y-24 md:space-y-32">
+          {projects.map((project, index) => {
+            const flip = index % 2 === 1
+            return (
+              <li key={project.title} className="group grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+                <div className={`relative lg:col-span-7 ${flip ? "lg:order-2" : ""}`}>
+                  <div
+                    aria-hidden="true"
+                    className={`absolute -bottom-4 size-24 md:-bottom-6 md:size-36 ${
+                      flip ? "-left-4 rounded-tr-full bg-cobalt md:-left-6" : "-right-4 rounded-tl-full bg-signal md:-right-6"
+                    }`}
                   />
+                  <div className={`duotone relative aspect-[16/10] overflow-hidden border-2 border-ink ${"darkImage" in project && project.darkImage ? "duotone-invert" : ""}`}>
+                    <img
+                      src={project.image || "/placeholder.svg"}
+                      alt={`Captura do projeto ${project.title}`}
+                      className="size-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
 
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                </CardHeader>
+                <div className={`lg:col-span-5 ${flip ? "lg:order-1" : ""}`}>
+                  <h3 className="font-display text-[clamp(2.25rem,5vw,3.75rem)] text-ink">{project.title}</h3>
+                  <p className="mt-5 max-w-[46ch] text-lg leading-relaxed text-ink-soft">{project.description}</p>
 
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" className="text-xs">
+                  <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm text-ink" aria-label="Tecnologias">
+                    {project.technologies.map((tech) => (
+                      <li key={tech} className="after:ml-4 after:text-cobalt after:content-['/'] last:after:hidden">
                         {tech}
-                      </Badge>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
 
-                  <div className="flex gap-2 pt-2">
-                    
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Button size="sm" variant="outline" className="flex-1 bg-transparent">
-                      <Github className="h-4 w-4 mr-2" />
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-wide inline-flex items-center gap-3 bg-ink px-6 py-3.5 font-bold text-paper no-underline transition-colors duration-200 hover:bg-cobalt"
+                    >
+                      <Github className="size-5" />
                       Código
-                    </Button>
                     </a>
-                    <Button size="sm" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </Button>
+                    {project.demo && project.demo !== "#" && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-wide inline-flex items-center gap-3 border-2 border-ink px-6 py-3 font-bold text-ink no-underline transition-colors duration-200 hover:bg-signal"
+                      >
+                        Demo
+                        <ArrowUpRight className="size-5" />
+                      </a>
+                    )}
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
       </div>
     </section>
   )

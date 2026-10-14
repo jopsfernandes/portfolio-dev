@@ -1,58 +1,59 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Code, Rocket, Users, Coffee } from "lucide-react"
-
 export function About() {
   const highlights = [
     {
-      icon: Code,
       title: "Clean Code",
       description: "Escrevo código limpo, testável e bem documentado",
     },
     {
-      icon: Rocket,
       title: "Performance",
       description: "Otimizo aplicações para máxima performance e UX",
     },
     {
-      icon: Users,
       title: "Colaboração",
       description: "Trabalho bem em equipe e comunico ideias claramente",
     },
     {
-      icon: Coffee,
       title: "Dedicação",
       description: "Sempre aprendendo e me mantendo atualizado",
     },
   ]
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-balance">Sobre Mim</h2>
+    <section id="about" className="on-paper bg-paper py-24 md:py-36">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-10 lg:grid-cols-12 lg:gap-10">
+        <h2 className="font-display text-[clamp(2.75rem,7vw,5rem)] text-ink lg:col-span-4">
+          Sobre
+          <br />
+          Mim
+        </h2>
 
-          <div className="max-w-2xl mx-auto mb-16">
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Sou um desenvolvedor full stack com mais de 5 anos de experiência criando aplicações web modernas e
-              escaláveis. Tenho prazer em transformar o que antes era um problema em soluções funcionais.
-            </p>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Especializo-me em React, Node.js, TypeScript e tecnologias modernas do ecossistema JavaScript. Sempre
-              busco as melhores práticas e mantenho-me atualizado com as últimas tendências do desenvolvimento web.
-            </p>
-          </div>
+        <div className="lg:col-span-8">
+          <p className="max-w-[38ch] text-2xl leading-snug font-medium text-ink md:text-[1.75rem]">
+            Sou um desenvolvedor full stack com mais de 5 anos de experiência criando aplicações web modernas e
+            escaláveis. Tenho prazer em transformar o que antes era um problema em soluções funcionais.
+          </p>
+          <p className="mt-6 max-w-[62ch] text-lg leading-relaxed text-ink-soft">
+            Especializo-me em React, Node.js, TypeScript e tecnologias modernas do ecossistema JavaScript. Sempre
+            busco as melhores práticas e mantenho-me atualizado com as últimas tendências do desenvolvimento web.
+          </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {highlights.map((item, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <item.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </CardContent>
-              </Card>
+          <dl className="mt-16 grid border-t-2 border-ink sm:grid-cols-2">
+            {highlights.map((item, i) => (
+              <div
+                key={item.title}
+                className={`border-b border-border py-7 sm:pr-8 ${i % 2 === 1 ? "sm:border-l sm:pl-8" : ""}`}
+              >
+                <dt className="font-wide flex items-center gap-3 text-2xl font-bold text-ink">
+                  <span
+                    aria-hidden="true"
+                    className={`inline-block size-3.5 ${["bg-cobalt", "bg-signal", "bg-ink", "rounded-full bg-cobalt"][i]}`}
+                  />
+                  {item.title}
+                </dt>
+                <dd className="mt-2 text-base leading-relaxed text-ink-soft">{item.description}</dd>
+              </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
     </section>

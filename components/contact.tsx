@@ -3,11 +3,10 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
+
+const fieldClass =
+  "mt-2 block w-full border-0 border-b-2 border-ink bg-transparent px-0 py-3 text-lg text-ink placeholder:text-ink/55 focus:border-cobalt focus:outline-none focus-visible:outline-none"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -16,138 +15,109 @@ export function Contact() {
     subject: "",
     message: "",
   })
+  const [sent, setSent] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aqui você implementaria o envio do formulário
-    console.log("Form submitted:", formData)
-    alert("Mensagem enviada com sucesso!")
+    // Sem backend: abre o app de email do visitante com a mensagem pronta.
+    const body = `${formData.message}\n\n${formData.name} <${formData.email}>`
+    window.location.href = `mailto:contato@devfernandes.com?subject=${encodeURIComponent(
+      formData.subject,
+    )}&body=${encodeURIComponent(body)}`
+    setSent(true)
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setSent(false)
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
   }
 
+  const info = [
+    { icon: Mail, label: "Email", value: "contato@devfernandes.com", href: "mailto:contato@devfernandes.com" },
+    { icon: Phone, label: "Telefone", value: "+55 (67) 99953-3807", href: "tel:+5567999533807" },
+    { icon: MapPin, label: "Localização", value: "Campo Grande, Mato Grosso do Sul" },
+  ]
+
   return (
-    <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-balance">Vamos Trabalhar Juntos</h2>
+    <section id="contact" className="on-signal relative overflow-hidden bg-signal py-24 text-ink md:py-36">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 -right-40 size-[28rem] rounded-full bg-signal-deep md:size-[40rem]"
+      />
+      <div className="relative mx-auto max-w-7xl px-5 md:px-10">
+        <h2 className="font-display max-w-[12ch] text-[clamp(2.75rem,8vw,5.75rem)]">Vamos Trabalhar Juntos</h2>
+        <p className="mt-8 max-w-[52ch] text-xl leading-snug">
+          Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar sobre
+          como posso ajudar!
+        </p>
 
-          <p className="text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto text-balance">
-            Estou sempre aberto a novas oportunidades e projetos interessantes. Entre em contato e vamos conversar sobre
-            como posso ajudar!
-          </p>
-
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Informações de Contato */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">Informações de Contato</h3>
-
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Email</p>
-                      <p className="text-muted-foreground">contato@devfernandes.com</p>
-                    </div>
+        <div className="mt-16 grid gap-16 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-5">
+            <h3 className="font-wide text-lg font-bold">Informações de Contato</h3>
+            <ul className="mt-6 border-t-2 border-ink">
+              {info.map(({ icon: Icon, label, value, href }) => (
+                <li key={label} className="flex items-start gap-4 border-b border-ink/25 py-5">
+                  <Icon className="mt-1 size-5 shrink-0" aria-hidden="true" />
+                  <div>
+                    <p className="text-sm font-semibold">{label}</p>
+                    {href ? (
+                      <a href={href} className="font-wide text-xl font-semibold break-words text-ink hover:underline">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="font-wide text-xl font-semibold">{value}</p>
+                    )}
                   </div>
+                </li>
+              ))}
+            </ul>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Telefone</p>
-                      <p className="text-muted-foreground">+55 (67) 99953-3807</p>
-                    </div>
-                  </div>
+            <h4 className="font-wide mt-12 text-lg font-bold">Disponibilidade</h4>
+            <p className="mt-3 max-w-[44ch] leading-relaxed">
+              Atualmente disponível para projetos freelance e oportunidades de trabalho remoto. Respondo a todas as
+              mensagens em até 24 horas.
+            </p>
+          </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Localização</p>
-                      <p className="text-muted-foreground">Campo Grande, Mato Grosso do Sul</p>
-                    </div>
-                  </div>
-                </div>
+          <div className="bg-paper p-6 shadow-[0_24px_48px_-24px_oklch(0.2_0.03_265/0.45)] sm:p-10 lg:col-span-7">
+            <h3 className="font-display text-3xl md:text-4xl">Envie uma Mensagem</h3>
+            <form onSubmit={handleSubmit} className="mt-8 space-y-7">
+              <div className="grid gap-7 sm:grid-cols-2">
+                <label className="block text-sm font-semibold">
+                  Nome
+                  <input name="name" placeholder="Seu nome" value={formData.name} onChange={handleChange} required autoComplete="name" className={fieldClass} />
+                </label>
+                <label className="block text-sm font-semibold">
+                  Email
+                  <input name="email" type="email" placeholder="Seu email" value={formData.email} onChange={handleChange} required autoComplete="email" className={fieldClass} />
+                </label>
               </div>
 
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Disponibilidade</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  Atualmente disponível para projetos freelance e oportunidades de trabalho remoto. Respondo a todas as
-                  mensagens em até 24 horas.
-                </p>
-              </div>
-            </div>
+              <label className="block text-sm font-semibold">
+                Assunto
+                <input name="subject" placeholder="Assunto" value={formData.subject} onChange={handleChange} required className={fieldClass} />
+              </label>
 
-            {/* Formulário de Contato */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Envie uma Mensagem</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <Input
-                        name="name"
-                        placeholder="Seu nome"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Seu email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
+              <label className="block text-sm font-semibold">
+                Mensagem
+                <textarea name="message" placeholder="Sua mensagem..." rows={5} value={formData.message} onChange={handleChange} required className={`${fieldClass} resize-y`} />
+              </label>
 
-                  <div>
-                    <Input
-                      name="subject"
-                      placeholder="Assunto"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <Textarea
-                      name="message"
-                      placeholder="Sua mensagem..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full" size="lg">
-                    <Send className="h-4 w-4 mr-2" />
-                    Enviar Mensagem
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+              <button
+                type="submit"
+                className="font-wide group flex w-full items-center justify-between bg-cobalt px-7 py-5 text-lg font-bold text-paper transition-colors duration-200 hover:bg-ink"
+              >
+                Enviar Mensagem
+                <ArrowRight className="size-5 transition-transform duration-300 ease-out-expo group-hover:translate-x-1" />
+              </button>
+              <p className="min-h-6 text-sm text-ink-soft" role="status" aria-live="polite">
+                {sent ? "Abrimos seu app de email com a mensagem pronta. É só enviar por lá." : ""}
+              </p>
+            </form>
           </div>
         </div>
       </div>
