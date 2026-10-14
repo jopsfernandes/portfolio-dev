@@ -1,9 +1,16 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
+import { Archivo } from 'next/font/google'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
+
+const archivo = Archivo({
+  subsets: ['latin'],
+  axes: ['wdth'],
+  variable: '--font-archivo',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.devfernandes.com'),
@@ -29,10 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+      <body className={`font-sans ${archivo.variable} ${GeistMono.variable}`}>
+        <ThemeProvider attribute="class" forcedTheme="light" enableSystem={false}>
           {children}
-          </ThemeProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>
