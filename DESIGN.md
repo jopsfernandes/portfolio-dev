@@ -26,7 +26,7 @@ Ritmo das seções: cobalto → papel → tinta → papel → amarelo → tinta.
 
 - Cantos retos (`--radius: 0`). Botões são blocos sólidos ou contorno de 2px; hover troca o campo de cor.
 - Sem cards como estrutura: listas com fios (`border-t-2 border-ink` + fios finos).
-- Capturas de projeto em duotone tinta-sobre-cobalto (`.duotone`; `.duotone-invert` para capturas escuras); cor original no hover.
+- Projetos mostram um GIF gravado do produto em uso, em cor real, com moldura de tinta de 2px; com `prefers-reduced-motion` entra um quadro estático.
 
 ## Movimento
 

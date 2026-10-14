@@ -143,38 +143,3 @@
   transform-box: fill-box;
   transition: transform 0.7s var(--ease-out-expo);
 }
-
-/* Duotone das capturas de projeto: tinta sobre cobalto. */
-.duotone {
-  position: relative;
-  background: var(--cobalt);
-  isolation: isolate;
-}
-.duotone img {
-  filter: grayscale(1) contrast(1.15) brightness(1.05);
-  mix-blend-mode: multiply;
-  transition: filter 0.6s var(--ease-out-expo), mix-blend-mode 0s;
-}
-.duotone::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--signal);
-  mix-blend-mode: lighten;
-  opacity: 0.18;
-  pointer-events: none;
-  transition: opacity 0.6s var(--ease-out-expo);
-}
-/* Capturas escuras invertem antes do multiply para não virarem um bloco preto. */
-.duotone-invert img {
-  filter: grayscale(1) invert(1) contrast(1.1) brightness(1.05);
-}
-.group:hover .duotone img,
-.group:focus-within .duotone img {
-  filter: none;
-  mix-blend-mode: normal;
-}
-.group:hover .duotone::after,
-.group:focus-within .duotone::after {
-  opacity: 0;
-}
